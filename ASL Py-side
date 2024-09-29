@@ -1,0 +1,64 @@
+import cv2
+import serial
+import time
+import os
+
+# Replace 'COM3' with your actual Arduino COM port
+ser = serial.Serial('COM6', 9600, timeout=1)
+
+def start_webcam():
+    # Open the webcam (0 is typically the default webcam)
+    cap = cv2.VideoCapture(0)
+
+    if not cap.isOpened():
+        print("Error: Could not open webcam.")
+        return
+
+    # Define the codec and create a VideoWriter object
+    fourcc = cv2.VideoWriter_fourcc(*'mp4v')  # 'mp4v' is the codec for .mp4 files
+    timestamp = time.strftime("%Y%m%d-%H%M%S")
+    output_filename = os.path.join(os.path.expanduser('~'), 'OneDrive', 'Desktop', f'webcam_video_{timestamp}.mp4')
+    out = cv2.VideoWriter(output_filename, fourcc, 20.0, (640, 480))
+
+    print(f"Recording started. Press 'q' to stop and save the video to {output_filename}.")
+
+    while True:
+        ret, frame = cap.read()
+        if not ret:
+            print("Error: Failed to capture image.")
+            break
+
+        # Write the frame to the video file
+        out.write(frame)
+
+        # Display the frame
+        cv2.imshow('Webcam', frame)
+
+        # Exit if 'q' is pressed
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            print("Recording stopped by user. Saving video...")
+            break
+
+        if ser.in_waiting > 0:
+            line = ser.readline().decode('utf-8').strip()
+            if "STOP_WEBCAM" in line:
+                print("Signal received: Stopping recording and saving video...")
+                break
+
+    # Release everything when the recording is finished
+    cap.release()
+    out.release()
+    cv2.destroyAllWindows()
+
+    print(f"Video saved to {output_filename}")
+
+print("Listening for Arduino signal...")
+
+while True:
+    if ser.in_waiting > 0:
+        line = ser.readline().decode('utf-8').strip()
+        print(f"Received: {line}")
+        if "START_WEBCAM" in line:
+            print("Signal received: Starting webcam...")
+            start_webcam()
+            break  # Exit the loop and end the program after recording

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignSync - ASL to English Translator</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="slideshow.css">
+    <link rel="stylesheet" href="team.css"> <!-- Link to the team-specific CSS -->
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to SignSync</h1>
+    </header>
+
+    <section class="description">
+        <h2>About</h2>
+        <p>
+            A product for translating American Sign Language (ASL) into text using Machine Learning, Arduino Uno, and OpenCV.
+        </p>
+    </section>
+
+    <!-- Slideshow Section -->
+    <section class="slideshow-container">
+        <div class="slideshow">
+            <div class="slide" id="slide1">
+                <img src="Hardware.JPG" alt="Image 1">
+            </div>
+            <div class="slide" id="slide2">
+                <img src="UI_1.png" alt="Image 2">
+            </div>
+            <div class="slide" id="slide3">
+                <img src="UI_2.png" alt="Image 3">
+            </div>
+        </div>
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </section>
+
+    <script src="slideshow.js"></script>
+
+    <section class="purpose">
+        <p>
+            SignSync is a tool designed for use in commercial and service areas to improve accessibility and facilitate seamless 
+            communication between ASL-speaking customers and non-ASL-speaking staff. This product will be available to staff
+            working in retail or service spaces. When an ASL-speaking customer wants to place an order, the device can be set
+            up within the rotatable tipping screen or any other pre-installed device. It will capture the customer's hand gestures and movements, 
+            translating them into English text that the staff can read to fulfill the customer's request.
+        </p>
+    </section>
+
+    <section class="flowchart">
+        <img src="FlowC.png" alt="Flowchart Image" width="800" height="400">
+    </section>
+
+    <section class="features">
+        <div class="feature-box">
+            <h3>Machine Learning</h3>
+            <p>The machine learning component of SignSync utilizes key libraries, including <strong>NumPy</strong> for numerical operations, <strong>OpenCV</strong> for image processing, and <strong>Keras</strong> for building the neural network. 
+                A <strong>Sequential model</strong> is initialized to construct a <strong>Convolutional Neural Network (CNN)</strong>, incorporating layers such as <strong>Conv2D</strong>, <strong>MaxPooling2D</strong>, and <strong>Dense</strong> for gesture recognition. 
+                The model is compiled and trained using a dataset of ASL gestures, with data augmentation and preprocessing techniques to enhance performance.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Arduino</h3>
+            <p>The <strong>Python script</strong> listens for input from the <strong>ultrasonic sensor</strong> on the breadboard, which detects deliberate movement. Then, when deliberate input is detected (when someone's hands come near the sensor) the <strong>Arduino</strong> code is executed. This triggers the webcam to open on the laptop and start recording the <strong>visual input</strong>. The process ends when the user clicks submit (aka, hitting q on the keyboard) and this recording is saved, ready to be processed by the machine learning model.</p>
+        </div>
+    </section>
+
+    <!-- Future Implementation Section -->
+    <section class="future-implementation">
+        <h2 style="color: #FFFFFF;">Future Implementation</h2>
+        <ul>
+            <li>Enhanced gesture recognition using AI and computer vision.</li>
+            <li>Integration with smart glasses for real-time ASL interpretation.</li>
+            <li>Multi-language translation support for a broader user base.</li>
+            <li>Collaboration with major tech platforms for wider accessibility.</li>
+        </ul>
+    </section>
+
+    <!-- Directly add the About Us section here -->
+    <section class="about-us">
+        <h2>Meet Our Team</h2>
+        <div class="team-container">
+            <!-- Team Member 1 -->
+            <div class="team-member-box">
+                <div class="team-member-img">
+                    <img src="images/Sthu.png" alt="Team Member 1">
+                </div>
+                <div class="team-member-text">
+                    <h3>Sristhuthi Chakravarthy</h3>
+                    <p>Front-end developer</p>
+                    <p>Project manager</p>
+                    <p>Comp Sci - Junior</p>
+                </div>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="team-member-box">
+                <div class="team-member-img">
+                    <img src="images/zuha.png" alt="Team Member 2">
+                </div>
+                <div class="team-member-text">
+                    <h3>Zuha Taha</h3>
+                    <p>Front-end developer</p>
+                    <p>Project Manager</p>
+                    <p>Applied Comp Sci - Senior</p>
+                </div>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="team-member-box">
+                <div class="team-member-img">
+                    <img src="images/kara.png" alt="Team Member 3">
+                </div>
+                <div class="team-member-text">
+                    <h3>Richana Ritthaworn</h3>
+                    <p>UI/UX Designer</p>
+                    <p>Comp Sci - Junior</p>
+                </div>
+            </div>
+
+            <!-- Team Member 4 -->
+            <div class="team-member-box">
+                <div class="team-member-img">
+                    <img src="images/Wijdane.jpeg" alt="Team Member 4">
+                </div>
+                <div class="team-member-text">
+                    <h3>Wijdane Mifdal</h3>
+                    <p>ML lead</p>
+                    <p>CS & DS +  Math - Senior </p>
+                </div>
+            </div>
+
+            <!-- Team Member 5 -->
+            <div class="team-member-box">
+                <div class="team-member-img">
+                    <img src="images/Rida.png" alt="Team Member 5">
+                </div>
+                <div class="team-member-text">
+                    <h3>Rida Hasan</h3>
+                    <p>Hardware integration and Arduino systems lead</p>
+                    <p>Cybersecurity Engineering - Senior</p>                    
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

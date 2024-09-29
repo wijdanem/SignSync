@@ -1,0 +1,132 @@
+/* Theme colors */
+:root {
+    --teal: #008080;
+    --off-white: #F8F8F8;
+    --box-shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Basic styling */
+body {
+    background-color: var(--off-white);
+    color: var(--teal);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--teal);
+    color: var(--off-white);
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+}
+
+/* Description section */
+.description {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h2 {
+    color: var(--teal);
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Purpose section */
+.purpose {
+    background-color: var(--teal);
+    color: var(--off-white);
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.purpose p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Flowchart section */
+.flowchart {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.flowchart img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid var(--teal);
+}
+
+/* Feature section with 3D style boxes */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.feature-box {
+    background-color: var(--off-white);
+    border: 1px solid var(--teal);
+    box-shadow: 5px 5px 15px var(--box-shadow-color);
+    padding: 20px;
+    width: 400px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.feature-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 5px 5px 25px var(--box-shadow-color);
+}
+
+.feature-box h3 {
+    color: var(--teal);
+    margin-bottom: 10px;
+}
+
+.feature-box p {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+/* Future Implementation section */
+.future-implementation {
+    padding: 40px 20px;
+    background-color: var(--teal);
+    color: var(--off-white);
+    text-align: center;
+}
+
+.future-implementation h2 {
+    margin-bottom: 20px;
+}
+
+.future-implementation ul {
+    /*list-style: none;
+    padding: 0;*/
+    list-style-type: disc; /* Adds bullet points */
+    padding-left: 0; /* Remove extra padding */
+    text-align: left; /* Ensures bullets and text align together */
+    display: inline-block; /* This helps in centering the entire list */
+}
+
+.future-implementation li {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    padding-left: 20px; /* Adds a small indent to create space between bullet and text */
+    text-align: left; /* Ensure text is aligned with bullets */
+}

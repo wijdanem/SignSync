@@ -1,0 +1,64 @@
+/* team.css */
+
+/* About Us Section */
+.about-us {
+    padding: 40px 20px;
+    background-color: var(--off-white);
+    color: var(--teal);
+    text-align: center;
+}
+
+.about-us h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.team-member-box {
+    background-color: var(--off-white);
+    border: 1px solid var(--teal);
+    box-shadow: 5px 5px 15px var(--box-shadow-color);
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.team-member-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 5px 5px 25px var(--box-shadow-color);
+}
+
+.team-member-img {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 10px auto;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 3px solid var(--teal);
+}
+
+.team-member-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-member-text h3 {
+    color: var(--teal);
+    margin-bottom: 5px;
+    font-size: 1.2em;
+}
+
+.team-member-text p {
+    font-size: 1em;
+    line-height: 1.5;
+}

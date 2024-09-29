@@ -9,4 +9,30 @@ The machine learning component of SignSync utilizes key libraries, including Num
 Arduino
 The Python script listens for input from the ultrasonic sensor on the breadboard, which detects deliberate movement. Then, when deliberate input is detected (when someone's hands come near the sensor) the Arduino code is executed. This triggers the webcam to open on the laptop and start recording the visual input. The process ends when the user clicks submit (aka, hitting q on the keyboard) and this recording is saved, ready to be processed by the machine learning model.
 
-Hackathon: George Mason University Hackoverflow September 2024
+Hackathon: George Mason University Hackoverflow September 2024 
+link: https://devpost.com/software/signsync-tbz4rn?ref_content=user-portfolio&ref_feature=in_progress
+
+Team membets: 
+Sristhuthi Chakravarthy
+Front-end developer & Project manager
+Comp Sci - Junior
+
+Team Member 2
+Zuha Taha
+Front-end developer & Project Manager
+Applied Comp Sci - Senior
+
+Team Member 3
+Richana Ritthaworn
+UI/UX Designer
+Comp Sci - Junior
+
+Team Member 4
+Wijdane Mifdal
+ML lead
+CS & DS + Math - Senior
+
+Team Member 5
+Rida Hasan
+Hardware integration & Arduino systems lead
+Cybersecurity Engineering - Senior
